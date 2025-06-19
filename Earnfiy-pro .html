@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnfiy pro - &#2456;&#2480;&#2503; &#2476;&#2488;&#2503; &#2439;&#2472;&#2453;&#2494;&#2478; &#2453;&#2480;&#2497;&#2472; &#2488;&#2489;&#2460; &#2477;&#2494;&#2476;&#2503; &#2447;&#2454;&#2472;&#2503; &#2465;&#2494;&#2451;&#2472;&#2482;&#2503;&#2494;&#2465; &#2453;&#2480;&#2497;&#2472;</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00D1B2; /* Vibrant teal for buttons and highlights */
+      --secondary: #1A237E; /* Deep indigo for text and accents */
+      --accent: #FFAB00; /* Warm amber for secondary elements */
+      --text: #212121; /* Dark gray for readability */
+      --light-bg: #E6F0FA; /* Soft blue-gray background */
+      --white: #FFFFFF;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      --border-radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--light-bg), #B3E5FC); /* Subtle gradient background */
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Glittering Background Effect */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.1;
+      animation: glitter 10s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes glitter {
+      0% { transform: translateY(0); opacity: 0.1; }
+      50% { opacity: 0.15; }
+      100% { transform: translateY(-10px); opacity: 0.1; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+      opacity: 0.3;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+
+    .app-info {
+      flex: 1;
+      z-index: 1;
+    }
+
+    .app-info h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-info p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .install-btn {
+      background: var(--accent);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s, background 0.3s;
+      box-shadow: var(--shadow);
+    }
+
+    .install-btn:hover {
+      background: #F57C00;
+      transform: scale(1.05);
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .rating span {
+      color: #FFD700;
+      font-size: 1.3rem;
+    }
+
+    /* Sticky Install Button for Mobile */
+    .sticky-install {
+      display: none;
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    /* Screenshots Section */
+    .screenshots {
+      margin: 2rem 0;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshots::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .screenshots::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .screenshot {
+      width: 220px;
+      height: 440px;
+      border-radius: 12px;
+      margin-right: 1rem;
+      display: inline-block;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .screenshot:hover {
+      transform: scale(1.05);
+    }
+
+    /* Tabs Navigation */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #E0E0E0;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .tab:hover, .tab.active {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    /* About Section */
+    .about {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    .about h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .about ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .about ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about ul li::before {
+      content: '&#10004;';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform&nbsp;W translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    /* Reviews Section */
+    .reviews {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    .review-card {
+      border-bottom: 1px solid #E0E0E0;
+      padding: 1.5rem 0;
+    }
+
+    .review-card:last-child {
+      border-bottom: none;
+    }
+
+    .review-card p {
+      font-size: 1rem;
+      color: #5F6368;
+    }
+
+    .review-card strong {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .app-icon {
+        width: 100px;
+        height: 100px;
+      }
+
+      .app-info h1 {
+        font-size: 1.8rem;
+      }
+
+      .install-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .sticky-install {
+        display: block;
+      }
+
+      .screenshot {
+        width: 180px;
+        height: 360px;
+      }
+
+      .tabs {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0.5rem;
+      }
+
+      .app-info h1 {
+        font-size: 1.5rem;
+      }
+
+      .install-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+      }
+
+      .screenshot {
+        width: 150px;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <img src="/Image/Earnify Logo.png" alt="&#2480;&#2495;&#2441;&#2439;&#2475;&#2494;&#2439; &#2474;&#2509;&#2480;&#2507; &#2438;&#2439;&#2453;&#2472;" class="app-icon">
+      <div class="app-info">
+        <h1>Earnify pro - make money easy </h1>
+        <p>&#2488;&#2494;&#2480;&#2509;&#2477;&#2503; &#2453;&#2480;&#2503; &#2480;&#2495;&#2527;&#2503;&#2482; &#2478;&#2494;&#2472;&#2495; &#2439;&#2472;&#2453;&#2494;&#2478; &#2453;&#2480;&#2497;&#2472;</p>
+        <div class="rating">
+          <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5 (10K+ &#2480;&#2495;&#2477;&#2495;&#2441;)
+        </div>
+        <a href="/Image/Earnify Pro.apk" class="install-btn">
+          <span class="material-icons">get_app</span> &#2439;&#2472;&#2488;&#2509;&#2463;&#2482; &#2453;&#2480;&#2497;&#2472;
+        </a>
+      </div>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+      <div class="tab active" onclick="showSection('about')">&#2437;&#2509;&#2479;&#2494;&#2474; &#2488;&#2478;&#2509;&#2474;&#2480;&#2509;&#2453;&#2503;</div>
+      <div class="tab" onclick="showSection('features')">&#2475;&#2495;&#2458;&#2494;&#2480;</div>
+      <div class="tab" onclick="showSection('reviews')">&#2480;&#2495;&#2477;&#2495;&#2441;</div>
+    </div>
+
+    <!-- Screenshots Section -->
+    <div class="screenshots">
+      <img src="/Image/home.jpg" alt="Screenshot 1" class="screenshot">
+      <img src="/Image/profile.jpg" alt="Screenshot 2" class="screenshot">
+      <img src="/Image/raffer.jpg" alt="Screenshot 3" class="screenshot">
+      <img src="/Image/wallet.jpg"alt="Screenshot 4"class="screenshot"
+    </div>
+
+    <!-- About Section -->
+    <div class="about" id="about">
+      <h2>&#2437;&#2509;&#2479;&#2494;&#2474; &#2488;&#2478;&#2509;&#2474;&#2480;&#2509;&#2453;&#2503;</h2>
+      <p>Earnfiy Pro - ইনকামের সহজ পথ! Earnfiy Pro হলো একটি স্মার্ট ইনকাম অ্যাপ যেখানে আপনি নানা রকম টাস্ক পূরণ করে আয় করতে পারবেন।
+এই অ্যাপে রয়েছে: 
+<li>Daily Bonus – প্রতিদিন লগইন করলেই ফ্রি কয়েন পান 🎁 </li>
+<li>Math Task – সহজ অংকের উত্তর দিয়ে আয় করুন ➕➖ </li>
+
+<li>Article পড়া – আর্টিকেল পড়ুন, জ্ঞান বাড়ান ও কয়েন পান 📚 </li>
+
+<li>Spin & Wheel – চাকা ঘুরান, জিতুন রিওয়ার্ড 🎡 </li>
+
+<li>Scratch Card – স্ক্র্যাচ করে জিতুন চমকপ্রদ পুরস্কার 🎉 </li>
+
+<li>Offers – অফার পূরণ করে আয় করুন বাড়তি কয়েন 💸 </li>
+
+<li> Zone of Video – ভিডিও দেখুন, বিনোদনের সাথে আয় করুন 🎬 </li>
+
+<li> Gift Code Redeem – গিফট কোড ব্যবহার করে ইনস্ট্যান্ট রিওয়ার্ড পান 🎟️</li>
+
+<li>YouTube Video দেখা – ইউটিউব ভিডিও দেখে কয়েন অর্জন করুন ▶️</li>
+
+ <li>Bkash/Nagad Withdraw সিস্টেম 📲</li> 
+
+  <li>রেফার করে আয় বাড়ানোর সুযোগ 🫂</li>
+
+<li>ইউজার ফ্রেন্ডলি ডিজাইন এবং ফাস্ট পারফরমেন্স ⚡ এখনই ডাউনলোড করুন Earnfiy Pro, আর ঘরে বসেই শুরু করুন ইনকাম!Earnfiy Pro - ইনকামের সহজ পথ!</li>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features" id="features">
+      <div class="feature-card">
+        <h3><span class="material-icons">phone_iphone</span> &#2488;&#2489;&#2460; &#2439;&#2472;&#2509;&#2463;&#2494;&#2480;&#2475;&#2503;&#2488;</h3>
+        <p>&#2488;&#2453;&#2482; &#2476;&#2527;&#2488;&#2503;&#2480; &#2460;&#2472;&#2509;&#2479; &#2476;&#2509;&#2479;&#2476;&#2489;&#2494;&#2480;&#2453;&#2494;&#2480;&#2496;-&#2476;&#2494;&#2472;&#2509;&#2471;&#2476; &#2465;&#2495;&#2460;&#2494;&#2439;&#2472;</p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="material-icons">flash_on</span> &#2470;&#2509;&#2480;&#2497;&#2468; &#2474;&#2503;&#2478;&#2503;&#2472;&#2509;&#2463;</h3>
+        <p>&#2488;&#2494;&#2480;&#2509;&#2477;&#2503; &#2486;&#2503;&#2487;&#2503; &#2468;&#2494;&#2510;&#2453;&#2509;&#2487;&#2467;&#2495;&#2453; &#2463;&#2494;&#2453;&#2494; &#2474;&#2494;&#2472;</p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="material-icons">security</span> &#2441;&#2458;&#2509;&#2458; &#2472;&#2495;&#2480;&#2494;&#2474;&#2468;&#2509;&#2468;&#2494;</h3>
+        <p>&#2438;&#2474;&#2472;&#2494;&#2480; &#2465;&#2503;&#2463;&#2494; &#2488;&#2478;&#2509;&#2474;&#2498;&#2480;&#2509;&#2467; &#2488;&#2497;&#2480;&#2453;&#2509;&#2487;&#2495;&#2468;</p>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews" id="reviews">
+      <h2>&#2480;&#2495;&#2477;&#2495;&#2441; &#2447;&#2476;&#2434; &#2480;&#2503;&#2463;&#2495;&#2434;</h2>
+      <div class="review-card">
+        <p><strong>&#2480;&#2489;&#2495;&#2478; &#2478;&#2495;&#2527;&#2494;</strong> <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+        <p>&#2437;&#2488;&#2494;&#2471;&#2494;&#2480;&#2467; &#2437;&#2509;&#2479;&#2494;&#2474;! &#2474;&#2509;&#2480;&#2468;&#2495;&#2470;&#2495;&#2472; &#2488;&#2494;&#2480;&#2509;&#2477;&#2503; &#2453;&#2480;&#2503; &#2539;&#2534;&#2534; &#2463;&#2494;&#2453;&#2494; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468; &#2439;&#2472;&#2453;&#2494;&#2478; &#2453;&#2480;&#2459;&#2495;&#2404;</p>
+      </div>
+      <div class="review-card">
+        <p><strong>&#2480;&#2495;&#2527;&#2494; &#2438;&#2453;&#2509;&#2468;&#2494;&#2480;</strong> <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+        <p>&#2476;&#2509;&#2479;&#2476;&#2489;&#2494;&#2480; &#2453;&#2480;&#2494; &#2488;&#2489;&#2460; &#2447;&#2476;&#2434; &#2474;&#2503;&#2478;&#2503;&#2472;&#2509;&#2463; &#2470;&#2509;&#2480;&#2497;&#2468;&#2404; &#2468;&#2476;&#2503; &#2438;&#2480;&#2507; &#2488;&#2494;&#2480;&#2509;&#2477;&#2503; &#2469;&#2494;&#2453;&#2482;&#2503; &#2477;&#2494;&#2482;&#2507; &#2489;&#2468;&#2507;&#2404;</p>
+      </div>
+      <div class="review-card">
+        <p><strong>&#2488;&#2494;&#2476;&#2509;&#2476;&#2495;&#2480; &#2489;&#2494;&#2488;&#2494;&#2472; &#2488;&#2495;&#2474;&#2472;</strong> <span>&#9733;&#9733;&#9733;&#9734;&#9734;</span></p>
+        <p>&#2438;&#2478;&#2495; &#2474;&#2509;&#2480;&#2469;&#2478;&#2503; &#2477;&#2503;&#2476;&#2503;&#2459;&#2495;&#2482;&#2494;&#2478; &#2447;&#2463;&#2494; &#2475;&#2503;&#2453; &#2437;&#2509;&#2479;&#2494;&#2474;, &#2468;&#2476;&#2503; &#2459;&#2507;&#2463; &#2459;&#2507;&#2463; &#2463;&#2494;&#2488;&#2509;&#2453; &#2474;&#2498;&#2480;&#2467; &#2453;&#2480;&#2503; &#2474;&#2509;&#2480;&#2468;&#2495;&#2470;&#2495;&#2472; &#2536;&#2534;&#2534;-&#2542;&#2534;&#2534; &#2463;&#2494;&#2453;&#2494; &#2474;&#2494;&#2458;&#2509;&#2459;&#2495;&#2404;</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab Navigation
+    function showSection(sectionId) {
+      document.querySelectorAll('.about, .features, .reviews').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Initialize default tab
+    document.querySelectorAll('.about, .features, .reviews').forEach(section => {
+      section.style.display = 'none';
+    });
+    document.getElementById('about').style.display = 'block';
+  </script>
+</body>
+</html>
